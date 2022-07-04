@@ -5,12 +5,12 @@ const app = express();
 
 // Get request on root page
 app.get("/", (req, res) => {
-    res.send("Root Directory");
+    res.sendFile(`${process.env.PWD}/README.md`);
 });
 
 // Get request on /api endpoint
 app.get("/api", (req, res) => {
-    res.send("Welcome to the home page of Api!");
+    res.sendFile(`${process.env.PWD}/index.html`);
 });
 
 /**
@@ -25,13 +25,26 @@ app.get("/api/users", (req, res) => {
  * Get request on /api/users/:id endpoint
  * Get information regarding a specific user
  * */
-
-app.get("/api/users/:id", (req, res) => {
+app.get("/api/user/id=:id", (req, res) => {
     const user = userData[req.params.id];
     if (user) {
         res.json(user);
     } else {
+        res.statusCode = 404;
         res.json({ error: "User not found" });
+    }
+});
+
+app.get("/api/user/name=:name", (req, res) => {
+    const user = Object.values(userData).find(
+        (user) => user.name === req.params.name
+    );
+
+    if (user) {
+        res.json(user);
+    } else {
+        res.statusCode = 404;
+        res.json({ error: "User no found" });
     }
 });
 

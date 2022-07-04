@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Simple API</title>
+    </head>
+    <style>
+        body {
+            font-family: "Open Sans", sans-serif;
+            font-size: 16px;
+            color: #333;
+            background-color: #f5f5f5;
+            margin-left: 10%;
+        }
+        pre {
+            color: grey;
+            font-style: italic;
+            font-size: 18px;
+        }
+        sub-cap{
+            font-size: 14px;
+            font-style: italic;
+            color: purple;
+        }
+    </style>
+    <body>
+        <h1 class="title">Simple API</h1>
+
+        <main-body>
+            <h2 class="title">Documentation for the Simple API</h2>
+
+            <caption>
+                This is a simple API that allows you to create a new user and
+                get a list of all users.
+            </caption>
+            <hr />
+
+            <end-points>
+                <endpoint>
+                    <h3 class="title">Getting all users</h3>
+                    <pre>GET /api/users</pre>
+                    <hr />
+                </endpoint>
+
+                <endpoint>
+                    <h3 class="title">Getting user by id</h3>
+                    <pre>GET /api/user/id=value</pre>
+                    <sub-cap>Replace value with desired id </sub-cap>
+                    <hr />
+                </endpoint>
+
+                <endpoint>
+                    <h3 class="title">Getting user by name</h3>
+                    <pre>GET /api/user/name=value</pre>
+                    <sub-cap>Replace value with desired name </sub-cap>
+                    <hr />
+                </endpoint>
+            </end-points>
+        </main-body>
+    </body>
+</html>
