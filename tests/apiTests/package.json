@@ -1,0 +1,14 @@
+{
+    "main": "cucumber.config.js",
+    "scripts": {
+        "test:api": "cucumber-js --require cucumber.config.js --require stepDefinitions/**/*.js --format @cucumber/pretty-formatter"
+    },
+    "devDependencies": {
+        "axios": "^0.27.2",
+        "dotenv": "^16.0.1",
+        "@cucumber/cucumber": "^7.3.1",
+        "@cucumber/pretty-formatter": "^1.0.0-alpha.1"
+    },
+    "author": "Kiran Adhikari",
+    "license": "ISC"
+}
