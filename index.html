@@ -19,10 +19,15 @@
             font-style: italic;
             font-size: 18px;
         }
-        sub-cap{
+        sub-cap,
+        response-message {
             font-size: 14px;
             font-style: italic;
             color: purple;
+        }
+        response-message {
+            display: block;
+            color: green;
         }
     </style>
     <body>
@@ -41,6 +46,10 @@
                 <endpoint>
                     <h3 class="title">Getting all users</h3>
                     <pre>GET /api/users</pre>
+                    <response-message>
+                        Returns an object containing all users (Object of many
+                        objects)
+                    </response-message>
                     <hr />
                 </endpoint>
 
@@ -48,6 +57,10 @@
                     <h3 class="title">Getting user by id</h3>
                     <pre>GET /api/user/id=value</pre>
                     <sub-cap>Replace value with desired id </sub-cap>
+                    <response-message>
+                        Returns an object containing the user with the given id
+                        (Object)
+                    </response-message>
                     <hr />
                 </endpoint>
 
@@ -55,6 +68,10 @@
                     <h3 class="title">Getting user by name</h3>
                     <pre>GET /api/user/name=value</pre>
                     <sub-cap>Replace value with desired name </sub-cap>
+                    <response-message>
+                        Returns an object containing the user with the given
+                        name (Object)
+                    </response-message>
                     <hr />
                 </endpoint>
             </end-points>
