@@ -4,20 +4,38 @@ const { When, Then } = require("@cucumber/cucumber");
 let response = null;
 
 When("the user makes request for all users data", async function () {
-    response = await GET("/api/users");
+    try {
+        response = await GET("/api/users");
+    } catch {
+        console.log(
+            "If you are seeing this, then there was some issue with your request"
+        );
+    }
 });
 
 When(
     "the user makes request for a single user data with an id {string}",
     async function (idValue) {
-        response = await GET(`/api/user/id=${idValue}`);
+        try {
+            response = await GET(`/api/user/id=${idValue}`);
+        } catch {
+            console.log(
+                "If you are seeing this, then there was some issue with your request"
+            );
+        }
     }
 );
 
 When(
     "the user makes request for a single user data with a name {string}",
     async function (nameValue) {
-        response = await GET(`/api/user/name=${nameValue}`);
+        try {
+            response = await GET(`/api/user/name=${nameValue}`);
+        } catch {
+            console.log(
+                "If you are seeing this, then there was some issue with your request"
+            );
+        }
     }
 );
 
