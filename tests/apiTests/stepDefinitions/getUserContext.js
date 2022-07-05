@@ -35,12 +35,26 @@ Then(
 );
 
 Then(
-    "the user should see {string} and {string} in the response",
-    function (param1, param2) {
-        // code here to check if the response has param1 and param2
+    "the user should see {string} and {string} for all objects in the response",
+    async function (param1, param2) {
+        const objectArray = Object.values(await response.data);
+
+        for (let dataObj of objectArray) {
+            const keys = Object.keys(dataObj);
+            assert.equal(keys.includes(param1), true, `${param1} not found`);
+            assert.equal(keys.includes(param2), true, `${param2} not found`);
+        }
     }
 );
 
-Then("the user should get a single entry in the response", async function () {
-    // code here to check that response has only one object
-});
+Then(
+    "the user should get {string} and {string} of a  single user in the response",
+    async function (keyValue1, keyValue2) {
+        const dataObject = await response.data;
+
+        // checking if the response is an valid object
+        if (!dataObject[keyValue1] || !dataObject[keyValue2]) {
+            assert.fail(`No ${keyValue1} or ${keyValue2} found in response`);
+        }
+    }
+);
