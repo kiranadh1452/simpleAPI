@@ -6,7 +6,7 @@ setDefaultTimeout(1000 * 1000);
 
 BeforeAll(async function () {
     // creating base URL
-    axios.defaults.baseURL = process.env.BASE_URL;
+    axios.defaults.baseURL = process.env.BASE_URL || "http://localhost:3000";
 
     global.GET = axios.get;
 });

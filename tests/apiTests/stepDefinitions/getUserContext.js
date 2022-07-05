@@ -48,7 +48,7 @@ Then(
 );
 
 Then(
-    "the user should get {string} and {string} of a  single user in the response",
+    "the user should get {string} and {string} of a single user in the response",
     async function (keyValue1, keyValue2) {
         const dataObject = await response.data;
 
