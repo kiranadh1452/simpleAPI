@@ -31,7 +31,7 @@ app.get("/api/user/id=:id", (req, res) => {
         res.json(user);
     } else {
         res.statusCode = 404;
-        res.json({ error: "User not found" });
+        res.json({ error: "No user with such id" });
     }
 });
 
@@ -44,7 +44,7 @@ app.get("/api/user/name=:name", (req, res) => {
         res.json(user);
     } else {
         res.statusCode = 404;
-        res.json({ error: "User no found" });
+        res.json({ error: "No user with such name" });
     }
 });
 
