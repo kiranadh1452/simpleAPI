@@ -1,0 +1,34 @@
+name: TEST simpleAPI
+
+on:
+    push:
+        branches: [master]
+    pull_request:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v3
+          
+          - name: Setup node
+            uses: actions/setup-node@v3
+            with:
+              node-version: 14.x
+          
+          - name: Install dependencies of API
+            run: npm install
+          
+          - name: Start API
+            run: node expressApp.js &
+
+          - name: Install Dependencies of Test
+            run: |
+              cd tests/apiTests
+              npm install
+          
+          - name: Run Actual Tests
+            run: |
+              cd tests/apiTests
+              npm run test:api
