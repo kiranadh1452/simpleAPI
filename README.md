@@ -37,4 +37,5 @@
     ```
 
 ### C. How to run the tests
-> Checkout [here](https://github.com/kiranadh1452/simpleAPI/blob/master/tests/apiTests/README.md)
+> - Checkout [here](https://github.com/kiranadh1452/simpleAPI/blob/master/tests/apiTests/README.md) for tests implemented in Playwright Framework.
+> - Checkout [here](https://github.com/kiranadh1452/behatFramework) for tests implemented in Behat Framework.
