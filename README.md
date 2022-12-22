@@ -1,6 +1,6 @@
 ## Simple API
 
-### This is a simple test API built using `Express` framework.
+### This is a simple test API built using `Express` framework
 
 ### A. Available End-points:
 
